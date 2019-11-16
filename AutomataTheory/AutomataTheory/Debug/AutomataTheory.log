@@ -1,2 +1,7 @@
 ﻿  AutomataTheory.cpp
+C:\Users\TreyN\source\repos\AT-Group-Project\AutomataTheory\AutomataTheory\AutomataTheory.cpp(40,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\TreyN\source\repos\AT-Group-Project\AutomataTheory\AutomataTheory\AutomataTheory.cpp(53,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\TreyN\source\repos\AT-Group-Project\AutomataTheory\AutomataTheory\AutomataTheory.cpp(65,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\TreyN\source\repos\AT-Group-Project\AutomataTheory\AutomataTheory\AutomataTheory.cpp(153,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\TreyN\source\repos\AT-Group-Project\AutomataTheory\AutomataTheory\AutomataTheory.cpp(249,21): warning C4018: '<': signed/unsigned mismatch
   AutomataTheory.vcxproj -> C:\Users\TreyN\source\repos\AT-Group-Project\AutomataTheory\Debug\AutomataTheory.exe
