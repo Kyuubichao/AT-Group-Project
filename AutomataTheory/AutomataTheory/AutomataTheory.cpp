@@ -69,10 +69,11 @@ public:
 			if (states.at(i).stateName.compare(x) == 0)
 			{
 				return i;
+				cout << "OUT BOUT OF GETSTATELOCATION =" << i;
 			}
 		}
 	
-		cout << "Error, could not find state named " + x;
+		cout << "Error, could not find state named " + x << endl;
 		return -1;
 	}
 
@@ -170,12 +171,16 @@ int main()
 			//adding new state to DFA
 			newState = State();
 			newState.stateName = x.second;
-			DFA.states.push_back(newState);
+			
 			calcStates(NFA, DFA, newState);
+			DFA.states.push_back(newState);
+			DFA.states.push_back(newState);
+			DFA.print();
 		}
 		//insert transitions and states discovered by map into our current state
 		currentState.transition.push_back(x.first);
-		State superTemp = DFA.states.at(DFA.getStateLocation(x.second));
+		string temp = x.second;
+		State superTemp = DFA.states.at(DFA.getStateLocation(temp));
 		currentState.transitionState.push_back(superTemp);
 
 	}
@@ -232,48 +237,53 @@ int main()
 
 }
 
-void calcStates(FiniteAutomata NFA, FiniteAutomata DFA, State state) {
-	State currentState = State();
-	State tempState = State();
-	State newState = State();
+void calcStates(FiniteAutomata xx, FiniteAutomata yy, State state) {
+	State *currentState = &state;
+	State *tempState;
+	State newState;
+	FiniteAutomata *DFA = &yy;
+	FiniteAutomata* NFA = &xx;
 	queue<State> DFAQueue;
 	map<string, string> transitionMap;
 	
-
-	for (char x : state.stateName) {
-		DFAQueue.push(NFA.states.at(NFA.getStateLocation(to_string(x))));
+	for (int i = 0; i < state.stateName.size() - 1; i++) {
+		cout << "\nBIG BOI" << NFA->getStateLocation(to_string(state.stateName[i]));
+		//DFAQueue.push(NFA.states.at(NFA.getStateLocation(state.stateName[i])));
 	}
+
 
 	while (!DFAQueue.empty())
 	{
-		tempState = DFAQueue.front();
+		tempState = &DFAQueue.front();
 		DFAQueue.pop();
 
-		for (int i = 0; i < tempState.transition.size() - 1; i++) {
-			if (transitionMap.count(tempState.transition.at(i)) > 0)
+		for (int i = 0; i < tempState->transition.size() - 1; i++) {
+			if (transitionMap.count(tempState->transition.at(i)) > 0)
 			{
-				transitionMap.at(tempState.transition.at(i)) = transitionMap.at(tempState.transition.at(i)) + tempState.transitionState.at(i).stateName;
+				transitionMap.at(tempState->transition.at(i)) = transitionMap.at(tempState->transition.at(i)) + tempState->transitionState.at(i).stateName;
 			}
 			else
 			{
-				transitionMap.insert(pair<string, string>(tempState.transition.at(i), tempState.transitionState.at(i).stateName));
+				transitionMap.insert(pair<string, string>(tempState->transition.at(i), tempState->transitionState.at(i).stateName));
 			}
 		}
 	}
 
 	for (pair<string, string> x : transitionMap) {
-		if (!DFA.isExistStateName(x.second))
+		cout << "states mapped are " << x.second << endl;
+		if (!DFA->isExistStateName(x.second))
 		{
 			//adding new state to DFA
 			newState = State();
 			newState.stateName = x.second;
-			DFA.states.push_back(newState);
-			calcStates(NFA, DFA, newState);
+			DFA->states.push_back(newState);
+			calcStates(xx, yy, newState);
+			DFA->states.push_back(newState);
 		}
 		//insert transitions and states discovered by map into our current state
-		currentState.transition.push_back(x.first);
-		State superTemp = DFA.states.at(DFA.getStateLocation(x.second));
-		currentState.transitionState.push_back(superTemp);
+		currentState->transition.push_back(x.first);
+		State superTemp = DFA->states.at(DFA->getStateLocation(x.second));
+		currentState->transitionState.push_back(superTemp);
 
 	}
 
