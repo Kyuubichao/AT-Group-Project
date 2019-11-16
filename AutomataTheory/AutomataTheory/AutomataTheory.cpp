@@ -35,13 +35,14 @@ int main()
 	int charCount = 2;
 	int finalStateCount = 1;
 
+	//EXAMPLE 1 https://www.geeksforgeeks.org/theory-of-computation-conversion-from-nfa-to-dfa/
 	//3 (0, 1, 2)	//THREE STATES
 	//2 (a, b)		//2 CHARACTERS	
 	//1 (2)			//1 FINAL STATE
 	//
 	//0 a(0,1) b(0)	//STATE 0, TRANSITION A -> Q0, OR Q1, TRANSITION B -> Q0
 	//1 b(2)		//STATE 1, TRANSITION B -> Q2
-	//2				//STATE 2, NO TRANSITION
+	//2				//STATE 2, NO TRANSITION 
 	//
 
 	//intializing 3 states
@@ -71,6 +72,30 @@ int main()
 	//state 2 transitions
 	tempState = NFA.states.at(2);
 	//Bitch is empty
+
+	//Start at State 0
+	//find out that a maps to states 0 and 1
+	//find out that b maps to states 0
+
+	//create DFA state 0, a maps to 0, 1 so create new DFA state 01
+	//a(01) b(0)
+
+	//when looking at DFA state 01 transitions, you look at both NFA state 0 and NFA state 1
+	//NFA state 0 transition a goes to 01, and NFA state 1 transition a doesn't exist, so DFA a(01)
+	//NFA state 0 transition b goes 0, and NFA state 1 transition b goes to 2, so DFA b(02)
+	//since NFA state 2 is a final state, DFA state 02 is a final state
+
+	//when looking at DFA state 02 transitions, you look at both NFA state 0 and NFA state 2
+	//NFA state 0 transition a goes to 01, and NFA state 2 transition a doesn't exist, so DFA a(01)
+	//NFA state 0 trnasition b goes to 0, and NFA state 2 transition b doesn't exist, so DFA b(0)
+
+	//Therefore you have created the DFA
+	//
+	//0 a(01) b(0)
+	//01 a(01) b(02)
+	//02 a(01) b(0) --Final
+	//
+
 
 
 
