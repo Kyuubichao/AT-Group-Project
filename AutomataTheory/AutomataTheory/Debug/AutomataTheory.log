@@ -1,7 +1,8 @@
 ﻿  AutomataTheory.cpp
 C:\Users\TreyN\source\repos\AT-Group-Project\AutomataTheory\AutomataTheory\AutomataTheory.cpp(40,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\TreyN\source\repos\AT-Group-Project\AutomataTheory\AutomataTheory\AutomataTheory.cpp(53,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\TreyN\source\repos\AT-Group-Project\AutomataTheory\AutomataTheory\AutomataTheory.cpp(65,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\TreyN\source\repos\AT-Group-Project\AutomataTheory\AutomataTheory\AutomataTheory.cpp(153,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\TreyN\source\repos\AT-Group-Project\AutomataTheory\AutomataTheory\AutomataTheory.cpp(249,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\TreyN\source\repos\AT-Group-Project\AutomataTheory\AutomataTheory\AutomataTheory.cpp(56,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\TreyN\source\repos\AT-Group-Project\AutomataTheory\AutomataTheory\AutomataTheory.cpp(52,26): warning C4390: ';': empty controlled statement found; is this the intent?
+C:\Users\TreyN\source\repos\AT-Group-Project\AutomataTheory\AutomataTheory\AutomataTheory.cpp(68,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\TreyN\source\repos\AT-Group-Project\AutomataTheory\AutomataTheory\AutomataTheory.cpp(156,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\TreyN\source\repos\AT-Group-Project\AutomataTheory\AutomataTheory\AutomataTheory.cpp(252,21): warning C4018: '<': signed/unsigned mismatch
   AutomataTheory.vcxproj -> C:\Users\TreyN\source\repos\AT-Group-Project\AutomataTheory\Debug\AutomataTheory.exe

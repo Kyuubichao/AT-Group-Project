@@ -49,7 +49,7 @@ public:
 		//loop through states.stateNames to see if name x exists
 		//return true if it exists else false
 		
-		if (state.size() = 0);
+		if (states.size() == 0);
 		{
 			return false;
 		}
